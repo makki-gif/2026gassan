@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>月山登山計画 2026年7月｜峠山の会</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap');
+
+    :root {
+      --green:       #2e6b4f;
+      --green-mid:   #4a8c6a;
+      --green-light: #b8d9c8;
+      --green-faint: #eef6f1;
+      --beige:       #f5f0e8;
+      --beige-mid:   #e8e0d0;
+      --sand:        #c8b89a;
+      --warm:        #a05a20;
+      --bg:          #faf8f4;
+      --white:       #ffffff;
+      --text:        #252520;
+      --text-mid:    #666658;
+      --text-light:  #7e7d67;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─────────── HERO ─────────── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 520px;
+      max-height: 780px;
+    }
+
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      display: block;
+    }
+
+    .hero-grad {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(8, 28, 18, 0.18) 0%,
+        rgba(8, 28, 18, 0.42) 55%,
+        rgba(4, 18, 10, 0.72) 100%
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 52px;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .hero-h1 {
+      font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+      font-size: clamp(48px, 9vw, 80px);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.18em;
+      line-height: 1;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-date {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 1px;
+    }
+
+    .hero-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 3px 12px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─────────── WRAP ─────────── */
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─────────── MEMBERS ─────────── */
+    .members {
+      padding: 32px 0 0;
+    }
+
+    .members-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--beige-mid);
+      padding-bottom: 28px;
+    }
+
+    .members-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .members-names {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .member-count {
+      font-size: 11px;
+      color: var(--text-light);
+      background: var(--green-faint);
+      border-radius: 20px;
+      padding: 4px 14px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    /* ─────────── SECTION TITLE ─────────── */
+    .sec {
+      padding: 52px 0 0;
+    }
+
+    .sec-eyebrow {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 700;
+      margin-bottom: 0px;
+    }
+
+    .sec-title {
+      font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .sec-sub {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+
+    /* ─────────── TIMELINE ─────────── */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 80px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--beige-mid);
+    }
+
+    .tl {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 20px;
+      padding-top: 18px;
+      position: relative;
+    }
+
+    .tl-left::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 22px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--green-light);
+    }
+
+    .tl.key .tl-left::after {
+      background: var(--green);
+      box-shadow: 0 0 0 2px var(--green);
+      width: 11px; height: 11px;
+      right: -6px; top: 21px;
+    }
+
+    .tl-time {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.1;
+      text-align: right;
+    }
+
+    .tl-time-sub {
+      font-size: 9px;
+      color: var(--text-light);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .tl-right {
+      padding: 14px 0 14px 20px;
+    }
+
+    .tl-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 6px;
+    }
+
+    .tl.sub .tl-card {
+      background: var(--beige);
+      border-radius: 8px;
+    }
+
+    .tl-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .tl-name.green { color: var(--green); }
+
+    .tl-note {
+      font-size: 11.5px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .tl-transport {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--green);
+      background: var(--green-faint);
+      border-radius: 4px;
+      padding: 3px 9px;
+      margin-top: 7px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ─────────── INN ─────────── */
+    .inn-card {
+      background: linear-gradient(135deg, #fdf8f0 0%, #f5ede0 100%);
+      border: 1px solid var(--beige-mid);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .inn-icon { font-size: 28px; flex-shrink: 0; }
+
+    .inn-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--warm);
+      margin-bottom: 3px;
+    }
+
+    .inn-meta { font-size: 11.5px; color: var(--text-mid); line-height: 1.5; }
+
+    .inn-price {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--warm);
+      background: #fdecd6;
+      border-radius: 4px;
+      padding: 2px 10px;
+    }
+
+    /* ─────────── HAGURO PHOTO SECTION ─────────── */
+    .haguro-section {
+      margin-top: 28px;
+    }
+
+    .haguro-photo-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .haguro-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .haguro-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(10,30,18,0.7) 0%, transparent 100%);
+      padding: 24px 20px 14px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 1px;
+    }
+
+    .haguro-lead {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .spots {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .spot {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 13px 15px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .spot-n {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--green);
+      min-width: 18px;
+      margin-top: 1px;
+    }
+
+    .spot-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .spot-desc {
+      font-size: 10.5px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .haguro-info {
+      background: var(--green-faint);
+      border-left: 2px solid var(--green-light);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 11.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .haguro-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-light);
+      padding-bottom: 1px;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s;
+    }
+
+    .haguro-link:hover { opacity: 0.7; }
+
+    /* ─────────── ROUTE ─────────── */
+    .route-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+
+    .route-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .route-flow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .rp {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .rp.normal {
+      background: var(--beige);
+      color: var(--text);
+    }
+
+    .rp.summit {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .rp small {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      margin-top: 1px;
+      opacity: 0.75;
+    }
+
+    .ra {
+      color: var(--beige-mid);
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .route-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .rst {
+      background: var(--beige);
+      border-radius: 8px;
+      padding: 10px 6px;
+      text-align: center;
+    }
+
+    .rst-v {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--green);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .rst-k {
+      font-size: 9px;
+      color: var(--text-light);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* ─────────── RETURN ─────────── */
+    .return-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-top: 10px;
+    }
+
+    .return-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .trains {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .train {
+      border: 1px solid var(--beige-mid);
+      border-radius: 8px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .train-opt {
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: var(--green-mid);
+      font-weight: 700;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .train-dep {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .train-arr {
+      font-size: 11px;
+      color: var(--text-mid);
+    }
+
+    .return-note {
+      font-size: 11.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      padding-top: 12px;
+      border-top: 1px solid var(--beige);
+    }
+
+    /* ─────────── DIVIDER ─────────── */
+    .div-line {
+      border: none;
+      border-top: 1px solid var(--beige-mid);
+      margin: 48px 0 0;
+    }
+
+    /* ─────────── FOOTER ─────────── */
+    .footer {
+      padding: 28px 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-org {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: var(--green-mid);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid var(--green-light);
+      padding-bottom: 1px;
+    }
+
+    .footer-link:hover { opacity: 0.7; }
+
+    /* ─────────── RESPONSIVE ─────────── */
+    @media (max-width: 540px) {
+      .hero-content { padding: 0 24px 36px; }
+      .hero-h1 { font-size: 42px; }
+      .spots { grid-template-columns: 1fr; }
+      .route-stats { grid-template-columns: repeat(2, 1fr); }
+      .trains { grid-template-columns: repeat(3, 1fr); }
+      .timeline::before { left: 72px; }
+      .tl { grid-template-columns: 72px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <img class="hero-img" src="gassan.jpg" alt="月山">
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">峠山の会 登山計画 2026</p>
+    <h1 class="hero-h1">月　山</h1>
+    <div class="hero-meta">
+      <span class="hero-date">7月4日（土）〜 5日（日）　1泊2日</span>
+      <div class="hero-pills">
+        <span class="hero-pill">10.0 km</span>
+        <span class="hero-pill">↑ 693 m</span>
+        <span class="hero-pill">↓ 921 m</span>
+        <span class="hero-pill">難易度 ふつう</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ MEMBERS ═══ -->
+  <div class="members">
+    <div class="members-inner">
+      <div>
+        <p class="members-label">Participants</p>
+        <p class="members-names">大橋さん、亀山さん、田村</p>
+      </div>
+      <span class="member-count">3名</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════ DAY 1 ════════════════════ -->
+  <div class="sec">
+    <p class="sec-eyebrow">Day 1 &nbsp;—&nbsp; 7/4（土）</p>
+    <h2 class="sec-title">移動 ＆ 羽黒山参拝</h2>
+    <p class="sec-sub">大宮から鶴岡・羽黒山へ</p>
+
+    <div class="timeline">
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">7:37</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">大宮 発</p>
+            <span class="tl-transport">🚅 つばさ123号（新庄行）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">10:46</span>
+          <span class="tl-time-sub">着</span>
+          <span class="tl-time" style="margin-top:4px">11:14</span>
+          <span class="tl-time-sub">発</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">新庄</p>
+            <span class="tl-transport">🚃 JR陸羽西線（酒田行）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">12:01</span>
+          <span class="tl-time-sub">着</span>
+          <span class="tl-time" style="margin-top:4px">12:05</span>
+          <span class="tl-time-sub">発</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">余目</p>
+            <span class="tl-transport">🚃 JR羽越本線（鶴岡行）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">12:20</span>
+          <span class="tl-time-sub">着</span>
+          <span class="tl-time" style="margin-top:4px">12:55</span>
+          <span class="tl-time-sub">発</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">鶴岡</p>
+            <span class="tl-transport">🚌 バス（エスモールバスターミナルのりば・羽黒山方面）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">13:31</span>
+          <span class="tl-time-sub">着</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">桜小路バス停（宿坊街）着</p>
+            <p class="tl-note">荷物を宿に預けて、羽黒山へ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time" style="color:var(--warm)">午後</span>
+        </div>
+        <div class="tl-right">
+          <!-- 羽黒山セクション -->
+          <div class="haguro-section">
+            <div class="haguro-photo-wrap">
+              <img class="haguro-photo" src="haguro.jpg" alt="羽黒山">
+              <p class="haguro-photo-caption">羽黒山 石段参道 ／ ミシュラン・グリーンガイド三つ星</p>
+            </div>
+            <p class="haguro-lead">
+              随神門をくぐれば、そこは杉の巨木が立ち並ぶ神域。2,446段の石段を登り、出羽三山の神々が集まる三神合祭殿へ。所要約90分、距離1.7km。初心者でも歩けるコースです。
+            </p>
+            <div class="spots">
+              <div class="spot">
+                <span class="spot-n">01</span>
+                <div>
+                  <p class="spot-title">随神門</p>
+                  <p class="spot-desc">神域への入口。ここをくぐると参詣道が始まる</p>
+                </div>
+              </div>
+              <div class="spot">
+                <span class="spot-n">02</span>
+                <div>
+                  <p class="spot-title">爺杉</p>
+                  <p class="spot-desc">樹齢千年以上の巨杉。天然記念物</p>
+                </div>
+              </div>
+              <div class="spot">
+                <span class="spot-n">03</span>
+                <div>
+                  <p class="spot-title">羽黒山 五重塔</p>
+                  <p class="spot-desc">東北最古の五重塔。杉林の中に佇む</p>
+                </div>
+              </div>
+              <div class="spot">
+                <span class="spot-n">04</span>
+                <div>
+                  <p class="spot-title">三神合祭殿</p>
+                  <p class="spot-desc">茅葺き2.1mの大社。月山・湯殿山・羽黒山の三神を祀る</p>
+                </div>
+              </div>
+            </div>
+            <div class="haguro-info">
+              💡 石段には一の坂・二の坂・三の坂の急坂があります。スニーカーで歩けます。<br>
+              石段に刻まれた33の彫り物を探しながら歩くのも楽しみのひとつ。
+              <br>
+              <a class="haguro-link" href="https://www.tsuruokakanko.com/course/10316" target="_blank">
+                ▶ 鶴岡市観光サイト｜羽黒山コース詳細
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time" style="color:var(--warm)">夕〜</span>
+        </div>
+        <div class="tl-right" style="padding-top:14px;">
+          <div class="inn-card">
+            <span class="inn-icon">🏯</span>
+            <div>
+              <p class="inn-name">宿坊 神林勝金</p>
+              <p class="inn-meta">羽黒山門前・宿坊街 ／ 夕食・朝食付き</p>
+              <span class="inn-price">¥12,000 / 人</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="div-line">
+
+  <!-- ════════════════════ DAY 2 ════════════════════ -->
+  <div class="sec">
+    <p class="sec-eyebrow">Day 2 &nbsp;—&nbsp; 7/5（日）</p>
+    <h2 class="sec-title">月山 登山</h2>
+    <p class="sec-sub">八合目から頂上、姥沢へ縦走</p>
+
+
+    <div class="timeline">
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">6:36</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">桜小路BS 発</p>
+            <span class="tl-transport">🚌 バス（月山八合目行）8:00着</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">8:10</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">月山八合目 登山口 ― 登山開始</p>
+            <p class="tl-note">弥陀ヶ原湿原を抜けて山頂を目指します</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">11:08</span>
+          <span class="tl-time-sub">頃</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">月山 頂上（1,984 m）</p>
+            <p class="tl-note">月山神社参拝 ／ 昼食・休憩(30分) ／ 姥沢方面へ下山</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">13:10</span>
+          <span class="tl-time-sub">頃</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">姥ヶ岳 通過</p>
+            <p class="tl-note">リフト乗り場分岐 ― 姥沢へ下降</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">14:07</span>
+          <span class="tl-time-sub">頃</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">姥沢 下山</p>
+            <p class="tl-note">バス待ち</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">14:15</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">姥沢BS 発</p>
+            <span class="tl-transport">🚌 バス → 西川IC 15:05着</span>
+            <p class="tl-note" style="margin-top:7px;">西川ICから徒歩5分 → 西川BS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl sub">
+        <div class="tl-left">
+          <span class="tl-time">15:25</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name">西川BS 発</p>
+            <span class="tl-transport">🚌 バス → 仙台駅</span>
+												<p class="tl-note">予約制・1ヶ月前から予約開始</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl key">
+        <div class="tl-left">
+          <span class="tl-time">17:00</span>
+        </div>
+        <div class="tl-right">
+          <div class="tl-card">
+            <p class="tl-name green">仙台駅 着 ― 新幹線へ乗り換え</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 帰りの新幹線 -->
+    <div class="return-block">
+      <p class="return-label">帰りの新幹線 &nbsp;仙台 → 大宮</p>
+      <div class="trains">
+        <div class="train">
+          <p class="train-opt">Option 1</p>
+          <p class="train-dep">17:24</p>
+          <p class="train-arr">大宮 19:03 着</p>
+        </div>
+        <div class="train">
+          <p class="train-opt">Option 2</p>
+          <p class="train-dep">17:43</p>
+          <p class="train-arr">大宮 19:19 着</p>
+        </div>
+        <div class="train">
+          <p class="train-opt">Option 3</p>
+          <p class="train-dep">18:31</p>
+          <p class="train-arr">大宮 19:52 着</p>
+        </div>
+      </div>
+      <p class="return-note">
+        仙台で夕食を食べるものいいかも。
+      </p>
+    </div>
+
+  </div>
+
+  <hr class="div-line">
+  <div class="wrap" style="padding:0;">
+    <div class="footer">
+      <span class="footer-org">峠山の会 ／ 2026年5月 作成</span>
+      <a class="footer-link" href="https://yamap.com/plans/code/gstuM8odIQ2RiFGeGml8NUI1ANPIb6RAiTcdmrGRTLRTAGr4N-YZAZcrLceFyDDARCU" target="_blank">
+        YAMAPで登山計画を確認 ↗
+      </a>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+</body>
+</html>
