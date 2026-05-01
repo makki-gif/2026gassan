@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>月山登山計画 2026年7月｜峠山の会</title>
+		
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap');
 
@@ -16,8 +18,8 @@
       --beige-mid:   #e8e0d0;
       --sand:        #c8b89a;
       --warm:        #a05a20;
-      --bg:          #faf8f4;
-      --white:       #ffffff;
+      --bg:          #fff;
+      --white:       #faf8f4;
       --text:        #252520;
       --text-mid:    #585848;
       --text-light:  #7e7d67;
@@ -30,7 +32,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+      font-family: 'Noto Sans JP', "Meiryo", sans-serif;
       font-size: 14px;
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
@@ -81,7 +83,7 @@
     }
 
     .hero-h1 {
-      font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+				font-family:'Sawarabi Mincho', "Meiryo", sans-serif;
       font-size: clamp(48px, 9vw, 80px);
       font-weight: 600;
       color: var(--white);
@@ -181,7 +183,7 @@
     }
 
     .sec-title {
-      font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+      
       font-size: 24px;
       font-weight: 600;
       color: var(--text);
@@ -264,20 +266,20 @@
     }
 
     .tl-right {
-      padding: 14px 0 14px 20px;
+      padding: 0px 0 0px 20px;
     }
 
     .tl-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 14px 18px;
+      /*background: var(--white);
+      border-radius: 10px;*/
+      padding: 14px 0px;
       margin-bottom: 6px;
     }
 
-    .tl.sub .tl-card {
+    /*.tl.sub .tl-card {
       background: var(--beige);
       border-radius: 8px;
-    }
+    }*/
 
     .tl-name {
       font-size: 15px;
@@ -310,7 +312,7 @@
 
     /* ─────────── INN ─────────── */
     .inn-card {
-      background: linear-gradient(135deg, #fdf8f0 0%, #f5ede0 100%);
+      background: var(--beige-mid);
       border: 1px solid var(--beige-mid);
       border-radius: 10px;
       padding: 16px 20px;
@@ -324,11 +326,11 @@
     .inn-name {
       font-size: 16px;
       font-weight: 700;
-      color: var(--warm);
+      
       margin-bottom: 3px;
     }
 
-    .inn-meta { font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+    .inn-meta { font-size: 14px; line-height: 1.5;color: var(--text-mid); }
 
     .inn-price {
       display: inline-block;
@@ -336,7 +338,7 @@
       font-size: 13px;
       font-weight: 700;
       color: var(--warm);
-      background: #fdecd6;
+      background:var(--white);
       border-radius: 4px;
       padding: 2px 10px;
     }
@@ -410,18 +412,18 @@
     }
 
     .spot-desc {
-      font-size: 14px;
-      color: var(--text-light);
+      font-size: 15px;
+      color: var(--text-mid);
       line-height: 1.5;
     }
 
     .haguro-info {
-      background: var(--green-faint);
-      border-left: 2px solid var(--green-light);
-      border-radius: 0 8px 8px 0;
+      
+      border: 2px solid var(--text-light);
+      border-radius: 8px;
       padding: 12px 16px;
       font-size: 16px;
-      color: var(--text-mid);
+     color: var(--text-mid);
       line-height: 1.7;
     }
 
@@ -430,7 +432,7 @@
       align-items: center;
       gap: 6px;
       margin-top: 12px;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--green);
       text-decoration: none;
@@ -685,7 +687,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">大宮 発</p>
+            <p class="tl-name">大宮 発</p>
             <span class="tl-transport">🚅 つばさ123号（新庄行）</span>
           </div>
         </div>
@@ -743,7 +745,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">桜小路バス停（宿坊街）着</p>
+            <p class="tl-name">桜小路バス停（宿坊街）着</p>
             <p class="tl-note">荷物を宿に預けて、羽黒山へ</p>
           </div>
         </div>
@@ -794,11 +796,11 @@
               </div>
             </div>
             <div class="haguro-info">
-              💡 石段には一の坂・二の坂・三の坂の急坂があります。スニーカーで歩けます。<br>
+              石段には一の坂・二の坂・三の坂の急坂があります。
               石段に刻まれた33の彫り物を探しながら歩くのも楽しみのひとつ。
               <br>
-              <a class="haguro-link" href="https://www.tsuruokakanko.com/course/10316" target="_blank">
-                ▶ 鶴岡市観光サイト｜羽黒山コース詳細
+              <a class="haguro-link" href="https://hagurokanko.jp/model/osusumecourse/" target="_blank">
+                ▶ 羽黒町観光協会サイト｜羽黒山コース詳細
               </a>
             </div>
           </div>
@@ -841,7 +843,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">桜小路BS 発</p>
+            <p class="tl-name">桜小路BS 発</p>
             <span class="tl-transport">🚌 バス（月山八合目行）8:00着</span>
           </div>
         </div>
@@ -853,7 +855,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">月山八合目 登山口 ― 登山開始</p>
+            <p class="tl-name">月山八合目 登山口 ― 登山開始</p>
             <p class="tl-note">弥陀ヶ原湿原を抜けて山頂を目指します</p>
           </div>
         </div>
@@ -904,7 +906,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">姥沢BS 発</p>
+            <p class="tl-name">姥沢BS 発</p>
             <span class="tl-transport">🚌 バス → 西川IC 15:05着</span>
             <p class="tl-note" style="margin-top:7px;">西川ICから徒歩5分 → 西川BS</p>
           </div>
@@ -930,7 +932,7 @@
         </div>
         <div class="tl-right">
           <div class="tl-card">
-            <p class="tl-name green">仙台駅 着 ― 新幹線へ乗り換え</p>
+            <p class="tl-name">仙台駅 着 ― 新幹線へ乗り換え</p>
           </div>
         </div>
       </div>
@@ -958,7 +960,9 @@
         </div>
       </div>
       <p class="return-note">
-        仙台で夕食を食べるものいいかも。
+        <a class="haguro-link" href="https://secure.j-bus.co.jp/busrepo/2024/01/04/post-23345/" target="_blank">
+                ▶ 仙台駅ナカグルメ
+              </a>
       </p>
     </div>
 
