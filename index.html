@@ -549,7 +549,7 @@
 
     .trains {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
       margin-bottom: 14px;
     }
@@ -633,7 +633,7 @@
       .hero-h1 { font-size: 42px; }
       .spots { grid-template-columns: 1fr; }
       .route-stats { grid-template-columns: repeat(2, 1fr); }
-      .trains { grid-template-columns: repeat(3, 1fr); }
+      .trains { grid-template-columns: repeat(3, 1fr); flex-wrap: wrap; }
       .timeline::before { left: 72px; }
       .tl { grid-template-columns: 72px 1fr; }
     }
@@ -931,19 +931,29 @@
       <p class="return-label">帰りの新幹線 &nbsp;仙台 → 大宮</p>
       <div class="trains">
         <div class="train">
-          <p class="train-opt">Option 1</p>
-          <p class="train-dep">17:24</p>
-          <p class="train-arr">大宮 19:03 着</p>
+          <p class="train-opt">はやぶさ30号</p>
+          <p class="train-dep">17:10</p>
+          <p class="train-arr">大宮 18:19 着</p>
         </div>
         <div class="train">
-          <p class="train-opt">Option 2</p>
-          <p class="train-dep">17:43</p>
-          <p class="train-arr">大宮 19:19 着</p>
+          <p class="train-opt">はやぶさ390号</p>
+          <p class="train-dep">17:19</p>
+          <p class="train-arr">大宮 18:31 着</p>
         </div>
         <div class="train">
-          <p class="train-opt">Option 3</p>
-          <p class="train-dep">18:31</p>
-          <p class="train-arr">大宮 19:52 着</p>
+          <p class="train-opt">はやぶさ32号</p>
+          <p class="train-dep">17:32</p>
+          <p class="train-arr">大宮 18:39 着</p>
+        </div>
+        <div class="train">
+          <p class="train-opt">はやぶさ62号</p>
+          <p class="train-dep">17:57</p>
+          <p class="train-arr">大宮 19:07 着</p>
+        </div>
+        <div class="train">
+          <p class="train-opt">はやぶさ110号</p>
+          <p class="train-dep">18:22</p>
+          <p class="train-arr">大宮 19:31 着</p>
         </div>
       </div>
       <p class="return-note">
